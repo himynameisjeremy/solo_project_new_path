@@ -1,10 +1,8 @@
 var express = require('express');
 var router = express.Router();
-var passport = require('passport');
 
 var path = require('path');
 
-var encryptLib = require('../modules/encryption');
 var connection = require('../modules/connection');
 var pg = require('pg');
 

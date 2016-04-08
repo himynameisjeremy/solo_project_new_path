@@ -11,6 +11,7 @@ var index = require('./routes/index');
 var user = require('./routes/user');
 var register = require('./routes/register');
 var create = require('./routes/create');
+var darelist = require('./routes/darelist');
 
 
 app.use(bodyParser.json());
@@ -34,6 +35,7 @@ app.use(passport.session());
 app.use('/register', register);
 app.use('/user', user);
 app.use('/create', create);
+app.use('/darelist', darelist);
 app.use('/', index);
 
 // Serve back static files
@@ -44,19 +46,6 @@ app.use(express.static('public/assets/scripts'));
 app.use(express.static('public/assets/styles'));
 app.use(express.static('public/vendors'));
 
-// Mongo Connection //
-// var mongoURI = "mongodb://localhost:27017/user_passport_session";
-//var mongoURI = "";
-
-// var mongoDB = mongoose.connect(mongoURI).connection;
-
-// mongoDB.on('error', function(err){
-//    if(err) console.log("MONGO ERROR: ", err);
-// });
-//
-// mongoDB.once('open', function(){
-//    console.log("Connected to Mongo, meow!");
-// });
 
 // App Set //
 app.set('port', (process.env.PORT || 5000));
