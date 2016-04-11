@@ -2,19 +2,20 @@
 
 
 <p>
-<form action="/create" method="post">
+<!-- <form action="/create" method="post"> -->
+<form name = "createform" ng-submit="submitForm()">
     <div>
         <label for="title">Epic title:</label>
-        <input type="text" name="title" id="title">
+        <input type="text" name="title" id="title" ng-model="createDare.title">
     </div>
 
     <div>
         <label for="description">Describe the dare in detail:</label>
-        <textarea type="description" name="description" id="description"></textarea>
+        <textarea type="description" name="description" id="description" ng-model="createDare.description"></textarea>
     </div>
     <div>
         <label for="pledge">Pledge amount:</label>
-        <input type="pledge" name="pledge" id="pledge">
+        <input type="pledge" name="pledge" id="pledge" ng-model="createDare.pledge">
     </div>
 
     <input type="submit" value="I Dare You"/>

@@ -1,3 +1,14 @@
 <p>
 This is to be User Home
 </p>
+<div ng-repeat = "dare in dareArray.response">
+  <p>
+    <a href="#description">{{ dare.title }}</a>
+  </p>
+  <p>
+    Description: {{ dare.description }}
+  </p>
+  <p>
+    Pledge: {{ dare.pledge }}
+  </p>
+</div>

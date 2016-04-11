@@ -8,7 +8,7 @@ var pg = require('pg');
 
 
 router.get('/', function(req, res){
-  
+
   pg.connect(connection, function(err, client, done){
     if (err) {
       done();
@@ -16,6 +16,7 @@ router.get('/', function(req, res){
       res.status(500).send(err);
     } else {
       var result = [];
+      //Need to insert modifier into "SELECT"
       var query = client.query('SELECT * FROM dares;');
 
       query.on('row', function(row){

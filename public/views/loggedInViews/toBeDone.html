@@ -2,3 +2,15 @@
 <p>
   This will be list of Dares that have not been completed by anyone.
 </p>
+<div ng-repeat = "dare in unfinishedArray.response | orderBy: '-id'">
+  <p>
+    Title: <a href="#dareDescription">{{ dare.title }}</a>
+  </p>
+  <!-- <p>
+    Description: {{ dare.description }}
+  </p> -->
+  <p>
+    Pledge: {{ dare.pledge }}
+  </p>
+  <button>Tell me more!</button>
+</div>
