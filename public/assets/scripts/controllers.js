@@ -28,7 +28,31 @@ myApp.controller('DareDescriptionController', ['$scope', '$http', "FactoryServic
   // console.log($scope.dare);
   $scope.returnFunc = function(){
     $window.location.href='#toBeDone';
-  }
+  };
+  $scope.conquered = function(){
+    // console.log("Yeeeeehaw!");
+    $window.location.href='#submitVideo';
+  };
+}]);
+
+myApp.controller('SubmitVideoController', ['$scope', '$http', "FactoryService", '$window', function($scope, $http, FactoryService, $window) {
+  // console.log("Submitting video, baby!");
+  // $scope.createDare = {};
+  // id = FactoryService.dare.fromFactory.id;
+  // console.log(FactoryService.dare.fromFactory.id);
+  // $scope.submitVideo = function(){
+  //   // console.log("I'm submitting a video!");
+  //   FactoryService.createVideoFunction(id, $scope.createDare);
+  //   // $window.location.href = '#toBeDone';
+  // };
+  $scope.createDare = {};
+  $scope.createDare.id = FactoryService.dare.fromFactory.id;
+  console.log(FactoryService.dare.fromFactory.id);
+  $scope.submitVideo = function(){
+    // console.log("I'm submitting a video!");
+    FactoryService.createVideoFunction($scope.createDare);
+    // $window.location.href = '#toBeDone';
+  };
 }]);
 
 myApp.controller('CreateController', ['$scope', '$http', "FactoryService", '$window', function($scope, $http, FactoryService, $window) {

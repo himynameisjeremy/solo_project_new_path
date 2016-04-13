@@ -47,9 +47,11 @@ myApp.factory("FactoryService", ["$http", function($http){
     // return dare;
   };
 
-  // var accessToDareForDareDescription = function(dare){
-  //   console.log(dare);
-  // };
+  var createVideoFunction = function(update){
+    $http.post('/submitVideo', update).then(function(request){
+      console.log(update);
+    });
+  };
 
 
   return {
@@ -61,7 +63,7 @@ myApp.factory("FactoryService", ["$http", function($http){
     dareListArray : dareListArray,
     unfinishedListArray : unfinishedListArray,
     unfinishedListToDareDescription : unfinishedListToDareDescription,
-    dare : dare
-    // accessToDareForDareDescription : accessToDareForDareDescription
+    dare : dare,
+    createVideoFunction : createVideoFunction
   };
 }]);

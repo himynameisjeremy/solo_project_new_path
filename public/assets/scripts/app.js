@@ -22,6 +22,10 @@ myApp.config(["$routeProvider", function($routeProvider){
             templateUrl: "/views/loggedInViews/dareDescription.html",
             controller: "DareDescriptionController"
         }).
+        when("/submitVideo", {
+            templateUrl: "/views/loggedInViews/submitVideo.html",
+            controller: "SubmitVideoController"
+        }).
         otherwise({
             redirectTo: "/userHome"
         });
