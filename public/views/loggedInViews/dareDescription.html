@@ -1,7 +1,17 @@
 <p>
-  Description will go here.
+  Are you man enough to complete this?
 </p>
 <p>
-  <a href="#toBeDone">Return to Uncompleted Dares</a>
+  Dare title: {{ dare.fromFactory.title }}
+</p>
+<p>
+  Dare description: {{ dare.fromFactory.description }}
+</p>
+<p>
+  Current pledge: {{ dare.fromFactory.pledge }}
 </p>
 <button>I came, I saw, I conquered.</button>
+<button ng-click = "returnFunc()">I'm not up to it.</button>
+<!-- <p>
+  <a href="#toBeDone">Return to Uncompleted Dares</a>
+</p> -->

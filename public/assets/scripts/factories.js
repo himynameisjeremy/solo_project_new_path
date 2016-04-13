@@ -2,6 +2,7 @@ myApp.factory("FactoryService", ["$http", function($http){
   var user = {};
   var dareListArray = {};
   var unfinishedListArray = {};
+  var dare = {};
 
   var userStart = function(){
     $http.get('/user').then(function(response) {
@@ -40,6 +41,16 @@ myApp.factory("FactoryService", ["$http", function($http){
     });
   };
 
+  var unfinishedListToDareDescription = function(dare1){
+    console.log(dare1);
+    dare.fromFactory = dare1;
+    // return dare;
+  };
+
+  // var accessToDareForDareDescription = function(dare){
+  //   console.log(dare);
+  // };
+
 
   return {
     userStart : userStart,
@@ -48,6 +59,9 @@ myApp.factory("FactoryService", ["$http", function($http){
     unfinishedList : unfinishedList,
     createFunction : createFunction,
     dareListArray : dareListArray,
-    unfinishedListArray : unfinishedListArray
+    unfinishedListArray : unfinishedListArray,
+    unfinishedListToDareDescription : unfinishedListToDareDescription,
+    dare : dare
+    // accessToDareForDareDescription : accessToDareForDareDescription
   };
 }]);

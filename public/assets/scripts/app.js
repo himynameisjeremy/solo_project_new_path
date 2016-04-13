@@ -20,7 +20,7 @@ myApp.config(["$routeProvider", function($routeProvider){
         }).
         when("/dareDescription", {
             templateUrl: "/views/loggedInViews/dareDescription.html",
-            // controller: "DareDescriptionController"
+            controller: "DareDescriptionController"
         }).
         otherwise({
             redirectTo: "/userHome"

@@ -4,7 +4,7 @@
 </p>
 <div ng-repeat = "dare in unfinishedArray.response | orderBy: '-id'">
   <p>
-    Title: <a href="#dareDescription">{{ dare.title }}</a>
+    Title: {{ dare.title }}
   </p>
   <!-- <p>
     Description: {{ dare.description }}
@@ -12,5 +12,5 @@
   <p>
     Pledge: {{ dare.pledge }}
   </p>
-  <button>Tell me more!</button>
+  <button ng-click="moreInfo(dare)">Tell me more!</button>
 </div>
