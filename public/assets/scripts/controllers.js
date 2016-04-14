@@ -72,10 +72,20 @@ myApp.controller('CreateController', ['$scope', '$http', "FactoryService", '$win
 myApp.controller('AdminHomeController', ['$scope', '$http', "FactoryService", '$window', function($scope, $http, FactoryService, $window) {
   FactoryService.pendingList();
   $scope.pendingArray = FactoryService.pendingListArray;
-  $scope.moreInfo = function(dare){
+  $scope.onToJudgement = function(dare){
     // console.log(dare);
     FactoryService.pendingListToJudgement(dare);
     $window.location.href = '#judgementPage';
   };
+
+}]);
+
+myApp.controller('JudgementController', ['$scope', '$http', "FactoryService", '$window', function($scope, $http, FactoryService, $window) {
+  console.log("You are being judged and have been found unworthy!");
+  $scope.dareToJudge = FactoryService.dareToJudge;
+  // console.log($scope.dareToJudge);
+  // $scope.returnFunc = function(){
+  //   $window.location.href='#adminHome';
+  // };
 
 }]);

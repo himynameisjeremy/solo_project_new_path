@@ -14,6 +14,7 @@ var create = require('./routes/create');
 var darelist = require('./routes/darelist');
 var unfinishedlist = require('./routes/unfinishedlist');
 var submitVideo = require('./routes/submitVideo');
+var pendingList = require('./routes/pendingList');
 
 
 app.use(bodyParser.json());
@@ -40,6 +41,7 @@ app.use('/create', create);
 app.use('/darelist', darelist);
 app.use('/unfinishedlist', unfinishedlist);
 app.use('/submitVideo', submitVideo);
+app.use('/pendingList', pendingList);
 app.use('/', index);
 
 // Serve back static files

@@ -3,7 +3,8 @@ myApp.factory("FactoryService", ["$http", function($http){
   var dareListArray = {};
   var unfinishedListArray = {};
   var dare = {};
-  var judgementListArray = {};
+  var pendingListArray = {};
+  var dareToJudge = {};
 
   var userStart = function(){
     $http.get('/user').then(function(response) {
@@ -54,11 +55,17 @@ myApp.factory("FactoryService", ["$http", function($http){
     });
   };
 
-  var judgementList = function(){
-    $http.get('/judgementList').then(function(response){
-      console.log("Console Log in judgementList: ", response.data);
-      judgementListArray.response = response.data;
+  var pendingList = function(){
+    $http.get('/pendingList').then(function(response){
+      console.log("Console Log in pendingList: ", response.data);
+      pendingListArray.response = response.data;
     });
+    // console.log("In pendingList function!");
+  };
+
+  var pendingListToJudgement = function(dare){
+    console.log(dare);
+    dareToJudge.fromFactory = dare;
   };
 
 
@@ -73,7 +80,9 @@ myApp.factory("FactoryService", ["$http", function($http){
     unfinishedListToDareDescription : unfinishedListToDareDescription,
     dare : dare,
     createVideoFunction : createVideoFunction,
-    judgementList : judgementList,
-    judgementListArray : judgementListArray
+    pendingList : pendingList,
+    pendingListArray : pendingListArray,
+    pendingListToJudgement : pendingListToJudgement,
+    dareToJudge : dareToJudge
   };
 }]);
