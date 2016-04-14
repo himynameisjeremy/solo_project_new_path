@@ -1,6 +1,11 @@
 <p>
 This is to be User Home
 </p>
+<div ng-if="isUserAdmin === 'true'">
+  <p>
+    <button ng-click="doAdminStuff()">Do Admin Stuff</button>
+  </p>
+</div>
 <div ng-repeat = "dare in dareArray.response">
   <p>
     <a href="#description">{{ dare.title }}</a>
@@ -11,4 +16,5 @@ This is to be User Home
   <p>
     Pledge: {{ dare.pledge }}
   </p>
+</div>
 </div>

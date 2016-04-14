@@ -3,6 +3,7 @@ myApp.factory("FactoryService", ["$http", function($http){
   var dareListArray = {};
   var unfinishedListArray = {};
   var dare = {};
+  var judgementListArray = {};
 
   var userStart = function(){
     $http.get('/user').then(function(response) {
@@ -53,6 +54,13 @@ myApp.factory("FactoryService", ["$http", function($http){
     });
   };
 
+  var judgementList = function(){
+    $http.get('/judgementList').then(function(response){
+      console.log("Console Log in judgementList: ", response.data);
+      judgementListArray.response = response.data;
+    });
+  };
+
 
   return {
     userStart : userStart,
@@ -64,6 +72,8 @@ myApp.factory("FactoryService", ["$http", function($http){
     unfinishedListArray : unfinishedListArray,
     unfinishedListToDareDescription : unfinishedListToDareDescription,
     dare : dare,
-    createVideoFunction : createVideoFunction
+    createVideoFunction : createVideoFunction,
+    judgementList : judgementList,
+    judgementListArray : judgementListArray
   };
 }]);

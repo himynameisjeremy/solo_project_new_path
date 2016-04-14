@@ -17,11 +17,10 @@ router.post('/', function(req, res, next) {
   pg.connect(connection, function(err, client, done) {
     var queryText = "UPDATE dares SET video_link = '";
     queryText = queryText + updateDare.video_link;
-    queryText = queryText + "' WHERE id = ";
+    queryText = queryText + "', dare_status = 'pending' WHERE id = ";
     queryText = queryText + updateDare.id;
     console.log( "doing query: ",queryText );
     client.query( queryText,
-      // [updateDare.video_link, updateDare.id],
         function (err, result) {
           client.end();
 

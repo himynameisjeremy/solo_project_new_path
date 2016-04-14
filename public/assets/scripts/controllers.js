@@ -10,6 +10,11 @@ myApp.controller('UserController', ['$scope', '$http', "FactoryService", '$windo
 myApp.controller('UserHomeController', ['$scope', '$http', "FactoryService", '$window', function($scope, $http, FactoryService, $window) {
   FactoryService.dareList();
   $scope.dareArray = FactoryService.dareListArray;
+  $scope.isUserAdmin = FactoryService.user.response.admin_status;
+  // console.log(FactoryService.user.response);
+  $scope.doAdminStuff = function(){
+    $window.location.href = '#adminHome';
+  };
 }]);
 
 myApp.controller('UnfinishedController', ['$scope', '$http', "FactoryService", '$window', function($scope, $http, FactoryService, $window) {
@@ -61,4 +66,16 @@ myApp.controller('CreateController', ['$scope', '$http', "FactoryService", '$win
     FactoryService.createFunction($scope.createDare);
     $window.location.href = '#toBeDone';
   };
+}]);
+
+
+myApp.controller('AdminHomeController', ['$scope', '$http', "FactoryService", '$window', function($scope, $http, FactoryService, $window) {
+  FactoryService.pendingList();
+  $scope.pendingArray = FactoryService.pendingListArray;
+  $scope.moreInfo = function(dare){
+    // console.log(dare);
+    FactoryService.pendingListToJudgement(dare);
+    $window.location.href = '#judgementPage';
+  };
+
 }]);

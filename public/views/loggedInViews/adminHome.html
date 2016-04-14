@@ -1,0 +1,14 @@
+<p>
+  Admin Home! :)
+</p>
+<div ng-repeat = "dare in pendingArray.response | orderBy: '-id'">
+  <p>
+    Title: {{ dare.title }}
+  </p>
+
+  <p>
+    Description: {{ dare.description }}
+  </p>
+
+  <button ng-click="functionGoesHere()">To Judgement Page</button>
+</div>

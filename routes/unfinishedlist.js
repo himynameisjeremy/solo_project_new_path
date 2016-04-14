@@ -17,7 +17,7 @@ router.get('/', function(req, res){
     } else {
       var result = [];
       //Need to insert modifier into "SELECT"
-      var query = client.query('SELECT * FROM dares;');
+      var query = client.query('SELECT * FROM dares WHERE dare_status IS NULL;');
 
       query.on('row', function(row){
         result.push(row);
