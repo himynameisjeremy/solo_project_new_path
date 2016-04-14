@@ -11,3 +11,6 @@
 <p>
   Video: {{ dareToJudge.fromFactory.video_link }}
 </p>
+<button ng-click = "win(dareToJudge.fromFactory.id)">We have a winner.</button>
+<button ng-click = "lose(dareToJudge.fromFactory.id)">Better luck next time.</button>
+<button ng-click = "returnFunc()">Judge It Later.</button>

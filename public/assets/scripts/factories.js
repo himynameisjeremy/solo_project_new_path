@@ -68,6 +68,22 @@ myApp.factory("FactoryService", ["$http", function($http){
     dareToJudge.fromFactory = dare;
   };
 
+  var judgementIsYes = function(id){
+    var objectToSend = {};
+    objectToSend.id = id;
+    $http.post('/judgementIsYes', objectToSend).then(function(request){
+      console.log(objectToSend.id);
+    });
+  };
+
+  var judgementIsNyet = function(id){
+    var objectToSend = {};
+    objectToSend.id = id;
+    $http.post('/judgementIsNyet', objectToSend).then(function(request){
+      console.log(objectToSend.id);
+    });
+  };
+
 
   return {
     userStart : userStart,
@@ -83,6 +99,8 @@ myApp.factory("FactoryService", ["$http", function($http){
     pendingList : pendingList,
     pendingListArray : pendingListArray,
     pendingListToJudgement : pendingListToJudgement,
-    dareToJudge : dareToJudge
+    dareToJudge : dareToJudge,
+    judgementIsYes : judgementIsYes,
+    judgementIsNyet : judgementIsNyet
   };
 }]);

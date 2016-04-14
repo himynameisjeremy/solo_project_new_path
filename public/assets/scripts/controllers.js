@@ -84,8 +84,20 @@ myApp.controller('JudgementController', ['$scope', '$http', "FactoryService", '$
   console.log("You are being judged and have been found unworthy!");
   $scope.dareToJudge = FactoryService.dareToJudge;
   // console.log($scope.dareToJudge);
-  // $scope.returnFunc = function(){
-  //   $window.location.href='#adminHome';
-  // };
+  $scope.returnFunc = function(){
+    $window.location.href='#adminHome';
+  };
+
+  $scope.win = function(id){
+    // console.log("You're getting paid.");
+    FactoryService.judgementIsYes(id);
+    $window.location.href='#adminHome';
+
+  };
+  $scope.lose = function(id){
+    console.log("Yeah, that sucked. Do it again.");
+    FactoryService.judgementIsNyet(id);
+    $window.location.href='#adminHome';
+  };
 
 }]);
