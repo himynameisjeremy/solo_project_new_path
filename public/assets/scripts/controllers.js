@@ -49,7 +49,11 @@ myApp.controller('DareDescriptionController', ['$scope', '$http', "FactoryServic
 //Dare Description from Unfinished List of Dares "toBeDone" page
 myApp.controller('DescriptionController', ['$scope', '$http', "FactoryService", '$window', function($scope, $http, FactoryService, $window) {
   $scope.dare = FactoryService.dare;
-  // console.log($scope.dare);
+  videoLink = FactoryService.dare.fromFactory.video_link;
+  $scope.code = videoLink.slice(32, 43);
+  // console.log(slicedLink);
+  // youTubeVideo = '<iframe width="560" height="315" src="https://www.youtube.com/embed/' + slicedLink +'" frameborder="0" allowfullscreen></iframe>';
+  // $scope.someVideo = $sce.trustAsResourceUrl(youTubeVideo);
   $scope.returnFunc = function(){
     $window.location.href='#userHome';
   };
