@@ -56,12 +56,13 @@ myApp.controller('SubmitVideoController', ['$scope', '$http', "FactoryService", 
   $scope.submitVideo = function(){
     // console.log("I'm submitting a video!");
     FactoryService.createVideoFunction($scope.createDare);
-    // $window.location.href = '#toBeDone';
+    $window.location.href = '#toBeDone';
   };
 }]);
 
 myApp.controller('CreateController', ['$scope', '$http', "FactoryService", '$window', function($scope, $http, FactoryService, $window) {
   $scope.createDare = {};
+  // $scope.createDare.created_timestamp = Date();
   $scope.submitForm = function(){
     FactoryService.createFunction($scope.createDare);
     $window.location.href = '#toBeDone';

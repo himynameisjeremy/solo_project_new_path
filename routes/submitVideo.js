@@ -10,14 +10,17 @@ router.post('/', function(req, res, next) {
 
   var updateDare = {
     video_link: req.body.video_link,
-    id : req.body.id
+    id : req.body.id,
+    status_change_timestamp: Date()
   };
 
 
   pg.connect(connection, function(err, client, done) {
     var queryText = "UPDATE dares SET video_link = '";
     queryText = queryText + updateDare.video_link;
-    queryText = queryText + "', dare_status = 'pending' WHERE id = ";
+    queryText = queryText + "', dare_status = 'pending', status_change_timestamp = '";
+    queryText += updateDare.status_change_timestamp;
+    queryText += "' WHERE id = ";
     queryText = queryText + updateDare.id;
     console.log( "doing query: ",queryText );
     client.query( queryText,

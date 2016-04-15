@@ -9,15 +9,16 @@ var pg = require('pg');
 router.post('/', function(req, res, next) {
 
   var updateDare = {
-    id : req.body.id
+    id : req.body.id,
+    status_change_timestamp: Date()
   };
-
-  // var id = req.body.id;
 
 
   pg.connect(connection, function(err, client, done) {
 
-    var queryText = "UPDATE dares SET dare_status = 'complete' WHERE id = ";
+    var queryText = "UPDATE dares SET dare_status = 'complete', video_link = NULL, status_change_timestamp = '";
+    queryText += updateDare.status_change_timestamp;
+    queryText += "' WHERE id = ";
     queryText = queryText + updateDare.id;
     console.log( "doing query: ",queryText );
     client.query( queryText,
