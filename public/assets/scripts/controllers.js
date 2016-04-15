@@ -15,6 +15,11 @@ myApp.controller('UserHomeController', ['$scope', '$http', "FactoryService", '$w
   $scope.doAdminStuff = function(){
     $window.location.href = '#adminHome';
   };
+  $scope.moreInfo = function(dare){
+    // console.log(dare);
+    FactoryService.userHomeToDescription(dare);
+    $window.location.href = '#description';
+  };
 }]);
 
 myApp.controller('UnfinishedController', ['$scope', '$http', "FactoryService", '$window', function($scope, $http, FactoryService, $window) {
@@ -38,6 +43,18 @@ myApp.controller('DareDescriptionController', ['$scope', '$http', "FactoryServic
     // console.log("Yeeeeehaw!");
     $window.location.href='#submitVideo';
   };
+}]);
+
+//Description controller list of completed Dares from userHome page
+//Dare Description from Unfinished List of Dares "toBeDone" page
+myApp.controller('DescriptionController', ['$scope', '$http', "FactoryService", '$window', function($scope, $http, FactoryService, $window) {
+  $scope.dare = FactoryService.dare;
+  // console.log($scope.dare);
+  $scope.returnFunc = function(){
+    $window.location.href='#userHome';
+  };
+
+
 }]);
 
 myApp.controller('SubmitVideoController', ['$scope', '$http', "FactoryService", '$window', function($scope, $http, FactoryService, $window) {

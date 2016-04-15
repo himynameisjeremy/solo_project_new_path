@@ -1,7 +1,14 @@
 <p>
-  Description will go here.
-</p>
-<p>
-  <a href="#userHome">Back to Home</a>
-</p>
-<button>I came, I saw, I conquered.</button>
+  <p>
+    Dare title: {{ dare.fromFactory.title }}
+  </p>
+  <p>
+    Dare description: {{ dare.fromFactory.description }}
+  </p>
+  <p>
+    User Made: ${{ dare.fromFactory.pledge }}
+  </p>
+  <p>
+    Video: {{ dare.fromFactory.video_link }}
+  </p>
+  <button ng-click = "returnFunc()">Back to Home.</button>

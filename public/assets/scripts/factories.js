@@ -84,6 +84,11 @@ myApp.factory("FactoryService", ["$http", function($http){
     });
   };
 
+  var userHomeToDescription = function(dareX){
+    console.log(dareX);
+    dare.fromFactory = dareX;
+  };
+
 
   return {
     userStart : userStart,
@@ -101,6 +106,7 @@ myApp.factory("FactoryService", ["$http", function($http){
     pendingListToJudgement : pendingListToJudgement,
     dareToJudge : dareToJudge,
     judgementIsYes : judgementIsYes,
-    judgementIsNyet : judgementIsNyet
+    judgementIsNyet : judgementIsNyet,
+    userHomeToDescription : userHomeToDescription
   };
 }]);

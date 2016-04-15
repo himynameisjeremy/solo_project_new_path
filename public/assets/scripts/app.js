@@ -16,7 +16,7 @@ myApp.config(["$routeProvider", function($routeProvider){
         }).
         when("/description", {
             templateUrl: "/views/loggedInViews/description.html",
-            // controller: "DescriptionController"
+            controller: "DescriptionController"
         }).
         when("/dareDescription", {
             templateUrl: "/views/loggedInViews/dareDescription.html",

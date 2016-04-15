@@ -7,14 +7,15 @@ This is to be User Home
   </p>
 </div>
 <div ng-repeat = "dare in dareArray.response">
-  <p>
+  <!-- <p>
     <a href="#description">{{ dare.title }}</a>
+  </p> -->
+  <p>
+    Title: {{ dare.title }}
   </p>
   <p>
-    Description: {{ dare.description }}
+    User made: ${{ dare.pledge }}
   </p>
-  <p>
-    Pledge: {{ dare.pledge }}
-  </p>
+  <button ng-click="moreInfo(dare)">Lets See This!</button>
 </div>
 </div>

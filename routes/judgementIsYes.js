@@ -16,7 +16,7 @@ router.post('/', function(req, res, next) {
 
   pg.connect(connection, function(err, client, done) {
 
-    var queryText = "UPDATE dares SET dare_status = 'complete', video_link = NULL, status_change_timestamp = '";
+    var queryText = "UPDATE dares SET dare_status = 'complete', status_change_timestamp = '";
     queryText += updateDare.status_change_timestamp;
     queryText += "' WHERE id = ";
     queryText = queryText + updateDare.id;

@@ -8,7 +8,7 @@ var pg = require('pg');
 
 
 router.get('/', function(req, res){
-  
+
   pg.connect(connection, function(err, client, done){
     if (err) {
       done();
@@ -16,7 +16,7 @@ router.get('/', function(req, res){
       res.status(500).send(err);
     } else {
       var result = [];
-      var query = client.query('SELECT * FROM dares;');
+      var query = client.query("SELECT * FROM dares WHERE dare_status = 'complete';");
 
       query.on('row', function(row){
         result.push(row);
