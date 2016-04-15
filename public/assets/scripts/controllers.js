@@ -50,6 +50,7 @@ myApp.controller('DareDescriptionController', ['$scope', '$http', "FactoryServic
 myApp.controller('DescriptionController', ['$scope', '$http', "FactoryService", '$window', function($scope, $http, FactoryService, $window) {
   $scope.dare = FactoryService.dare;
   videoLink = FactoryService.dare.fromFactory.video_link;
+  // $scope.checkHTTP =  videoLink.slice(0, 3); This can check to see if HTTP is present in order to slice!
   $scope.code = videoLink.slice(32, 43);
   // console.log(slicedLink);
   // youTubeVideo = '<iframe width="560" height="315" src="https://www.youtube.com/embed/' + slicedLink +'" frameborder="0" allowfullscreen></iframe>';

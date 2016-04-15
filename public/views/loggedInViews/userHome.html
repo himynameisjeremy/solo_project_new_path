@@ -6,7 +6,7 @@ This is to be User Home
     <button ng-click="doAdminStuff()">Do Admin Stuff</button>
   </p>
 </div>
-<div ng-repeat = "dare in dareArray.response">
+<div ng-repeat = "dare in dareArray.response | orderBy: '-status_change_timestamp'">
   <!-- <p>
     <a href="#description">{{ dare.title }}</a>
   </p> -->
