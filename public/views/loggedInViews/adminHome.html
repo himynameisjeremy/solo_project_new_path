@@ -1,5 +1,6 @@
+<div class = "container">
 <p>
-  Admin Home! :)
+  The following tasks are waiting, admin:
 </p>
 <div ng-repeat = "dare in pendingArray.response | orderBy: '-id'">
   <p>
@@ -10,5 +11,7 @@
     Description: {{ dare.description }}
   </p>
 
-  <button ng-click="onToJudgement(dare)">To Judgement Page</button>
+  <button ng-click="onToJudgement(dare)">I Judge You...</button>
+</div>
+
 </div>

@@ -1,6 +1,7 @@
 .instructions .container h1 {
     font-size: 24px;
     font-weight: 700;
+    text-align: right;
 }
 
 .instructions {
@@ -42,4 +43,18 @@
 
 .red {
   background-color: red;
+}
+
+.youtubeVideo {
+  margin: 10px auto 10px auto;
+}
+
+.sign-out {
+  text-align: right;
+}
+
+textarea {
+  width: 375px;
+  height: 150px;
+  display: block;
 }

@@ -1,15 +1,17 @@
-<p>
+<!-- <p>
 This is to be User Home
-</p>
+</p> -->
+<div class = "container">
 <div ng-if="isUserAdmin === 'true'">
+  <p>
+    Welcome Admin.  As admin you may:
+  </p>
   <p>
     <button ng-click="doAdminStuff()">Do Admin Stuff</button>
   </p>
 </div>
-<div ng-repeat = "dare in dareArray.response | orderBy: '-status_change_timestamp'">
-  <!-- <p>
-    <a href="#description">{{ dare.title }}</a>
-  </p> -->
+<!-- <div ng-repeat = "dare in dareArray.response | orderBy: '-status_change_timestamp'">
+
   <p>
     Title: {{ dare.title }}
   </p>
@@ -17,5 +19,25 @@ This is to be User Home
     User made: ${{ dare.pledge }}
   </p>
   <button ng-click="moreInfo(dare)">Lets See This!</button>
+</div> -->
+
+<div >
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Title of Completed Dare</th>
+      <th>User Made</th>
+      <th>Watch It Yourself</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat = "dare in dareArray.response | orderBy: '-status_change_timestamp'">
+      <td>{{dare.title}}</td>
+      <td>${{ dare.pledge }}</td>
+      <td><button ng-click="moreInfo(dare)">Lets See This!</button></td>
+    </tr>
+  </tbody>
+</table>
 </div>
+
 </div>

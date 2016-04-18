@@ -1,4 +1,4 @@
-<p>
+<div class = "container">
   <p>
     Dare title: {{ dare.fromFactory.title }}
   </p>
@@ -11,9 +11,12 @@
   <p>
     Video: {{ dare.fromFactory.video_link }}
   </p>
-  <div my-youtube code = "code">
-    
+  <div my-youtube code = "code" class="youtubeVideo">
+
   </div>
   <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ youtubed_link }}" frameborder="0" allowfullscreen></iframe> -->
-
+<div>
   <button ng-click = "returnFunc()">Back to Home.</button>
+
+</div>
+</div>

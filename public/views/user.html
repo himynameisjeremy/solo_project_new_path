@@ -16,13 +16,19 @@
 <body ng-app="myApp">
     <div class="instructions" ng-controller="UserController">
         <div class="container">
-            <h1 id="welcome" class="lead">Welcome, {{user.response.first_name}}! You are user {{user.response.id}}</h1>
+            <h1 id="welcome" class="lead">Welcome, {{user.response.first_name}}! Are you feeling dangerous?</h1>
         </div>
-        <ul>
-          <li><a href = "#user">Home</a></li>
-          <li><a href = "#toBeDone">Uncompleted Dares</a></li>
-          <li><a href = "#create">Create Dare</a></li>
-        </ul>
+        <nav class="nav nav-tabs">
+          <li class="nav-item"><a href = "#user">Home</a></li>
+          <li class="nav-item"><a href = "#toBeDone">Uncompleted Dares</a></li>
+          <li class="nav-item"><a href = "#create">Create Dare</a></li>
+          <li class="nav-item sign-out"><a href = "index.html">Sign Out</a></li>
+        </nav>
+        <!-- <nav class="nav nav-inline">
+          <a href = "#user">Home</a>
+          <a href = "#toBeDone">Uncompleted Dares</a>
+          <a href = "#create">Create Dare</a>
+        </nav> -->
     </div>
     <main ng-view>
 
